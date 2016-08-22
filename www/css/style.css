@@ -1,0 +1,334 @@
+section.chats div {
+  max-width: 255px;
+  word-wrap: break-word;
+  margin-bottom: 20px;
+  line-height: 24px;
+}
+
+section.chats p {
+  margin: 0;
+}
+
+section.chats p.username {
+  max-width: 255px;
+  font-weight: bold;
+}
+
+p.notification {
+  text-align: center;
+  font-style: italic;
+}
+
+.clear {
+  clear: both;
+}
+
+.from-meimg {
+  position: relative;
+  padding: 5px;
+  color: white;
+  background: #0B93F6;
+  border-radius: 5px;
+  float: right;
+  border: 1px solid #0B93F6;
+}
+
+.from-me {
+  position: relative;
+  padding: 10px 20px;
+  color: white;
+  background: #0B93F6;
+  border-radius: 25px;
+  float: right;
+}
+
+.from-me:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -2px;
+  right: -7px;
+  height: 20px;
+  border-right: 20px solid #0B93F6;
+  border-bottom-left-radius: 16px 14px;
+  -webkit-transform: translate(0, -2px);
+}
+
+.from-me:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: -2px;
+  right: -56px;
+  width: 26px;
+  height: 20px;
+  background: white;
+  border-bottom-left-radius: 10px;
+  -webkit-transform: translate(-30px, -2px);
+}
+
+.from-themimg {
+  position: relative;
+  padding: 2px;
+  color: white;
+  background: #E5E5EA;
+  border-radius: 5px;
+  float: left;
+  border: 1px solid #0B93F6;
+}
+
+.from-them {
+  position: relative;
+  padding: 10px 20px;
+  background: #E5E5EA;
+  border-radius: 25px;
+  color: black;
+  float: left;
+}
+
+.from-them:before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  bottom: -2px;
+  left: -7px;
+  height: 20px;
+  border-left: 20px solid #E5E5EA;
+  border-bottom-right-radius: 16px 14px;
+  -webkit-transform: translate(0, -2px);
+}
+
+.from-them:after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  bottom: -2px;
+  left: 4px;
+  width: 26px;
+  height: 20px;
+  background: white;
+  border-bottom-right-radius: 10px;
+  -webkit-transform: translate(-30px, -2px);
+}
+
+
+
+/* 聊天样式2 - http://codepen.io/rossmartin/pen/XJmpQr*/
+/*.from-them{
+  position: relative;  /!*日常相对定位*!/
+  padding: 5px;
+  border:black 1px solid;
+  border-radius:5px;
+  background: #E5E5EA;
+  float:left
+}
+.from-them:before,.from-them:after{
+  content: "";  /!*:before和:after必带技能，重要性为满5颗星*!/
+  display: block;
+  position: absolute;  /!*日常绝对定位*!/
+  top:8px;
+  width: 0;
+  height: 0;
+  border:6px transparent solid;
+}
+.from-them:before{
+  left:-11px;
+  border-right-color: #E5E5EA;
+  z-index:1
+}
+.from-them:after{
+  left:-12px;
+  border-right-color: rgba(0,0,0,1);
+  z-index: 0
+}
+
+
+
+.from-me{
+  position: relative;  /!*日常相对定位*!/
+  padding: 5px;
+  border:black 1px solid;
+  border-radius:5px;
+  background: #0B93F6;
+  float:right;
+}
+.from-me:before,.from-me:after{
+  content: "";  /!*:before和:after必带技能，重要性为满5颗星*!/
+  display: block;
+  position: absolute;  /!*日常绝对定位*!/
+  top:8px;
+  width: 0;
+  height: 0;
+  border:6px transparent solid;
+}
+.from-me:before{
+  right:-11px;
+  border-left-color: #0B93F6;
+  z-index:1
+}
+.from-me:after{
+  right:-12px;
+  border-left-color: rgba(0,0,0,1);
+  z-index: 0
+}*/
+
+
+
+
+/* 聊天样式3 - http://codepen.io/rossmartin/pen/XJmpQr*/
+/*
+.chat-bubble {
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px 18px;
+  position: relative;
+  margin: 10px;
+  max-width: 80%;
+}
+
+.chat-bubble:before {
+  content: "\00a0";
+  display: block;
+  height: 16px;
+  width: 9px;
+  position: absolute;
+  bottom: -7.5px;
+}
+
+.chat-bubble.left {
+  background-color: #e6e5eb;
+  float: left;
+  margin-left: 55px;
+}
+
+.chat-bubble.left:before {
+  background-color: #e6e5eb;
+  left: 10px;
+  -webkit-transform: rotate(70deg) skew(5deg);
+}
+
+.chat-bubble.right {
+  background-color: #158ffe;
+  color: #fff;
+  float: right;
+  margin-right: 55px;
+}
+
+.chat-bubble.right:before {
+  background-color: #158ffe;
+  right: 10px;
+  -webkit-transform: rotate(118deg) skew(-5deg);
+}
+
+.chat-bubble.right a.autolinker {
+  color: #fff;
+  font-weight: bold;
+}
+
+*/
+
+
+.username-list {
+  line-height: 38px;
+}
+
+/* 登录样式Start */
+
+body {
+  cursor: url(../imgs/finger.png), auto;
+}
+
+.login-page {
+  background: url(../imgs/background.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+.no-background {
+  background: none !important;
+}
+
+.button-calm {
+  background: #4789c1 !important;
+  border-color: #4789c1 !important;
+}
+
+.input-line {
+  border-width: 0 0 2px 0 !important;
+  border-color: #fff !important;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #fff !important;
+  opacity: 0.7;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #fff !important;
+  opacity: 0.7;
+}
+
+.input-text {
+  color: #fff !important;
+}
+
+.logo {
+  margin-top: 10vh;
+}
+
+.logo h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #fff;
+}
+
+.login-form {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+}
+
+/* 登录样式End */
+
+
+/* 选择操作的button样式*/
+.customIconSound {
+  background: #ffffff;
+  font-size: 35px;
+  width: 25px;
+  height: 25px;
+  border-radius:10px;
+  margin: 5px;
+}
+
+
+/*.popover ion-content {
+  top: -100px;
+  position: relative;
+}*/
+/*
+.popover.popover-bottom {
+  margin-top: -150px;
+}
+*/
+
+.voiceCenter {
+  margin:0 auto;
+ /* margin-left: auto;
+  margin-right: auto;*/
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.absolute-center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}

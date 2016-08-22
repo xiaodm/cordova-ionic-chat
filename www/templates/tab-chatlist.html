@@ -1,0 +1,23 @@
+<ion-view view-title="Users">
+  <ion-content>
+
+    <div class="list">
+      <a ng-repeat="userMessage in data" nav-transition="none" class="item item-avatar"
+         href="" ng-click="goChat(userMessage)">
+        <img src="imgs/touxiang1.jpg">
+        <h2 class="username-list">{{userMessage.from}}-({{userMessage.incidentNumber}})</h2>
+        <h2 class="username-list">{{userMessage.newestMessage}}</h2>
+        <span class="badge badge-assertive">{{userMessage.noReadCount}}</span>
+      </a>
+    </div>
+
+    <div ng-if="data.length == 0" class="card">
+      <div class="item item-text-wrap">
+        There no messages
+      </div>
+    </div>
+
+    <!--还要考虑数据多的情况-->
+
+  </ion-content>
+</ion-view>

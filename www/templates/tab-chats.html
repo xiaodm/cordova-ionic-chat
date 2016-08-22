@@ -1,0 +1,103 @@
+<ion-view view-title="Chats">
+
+  <ion-header-bar align-title="left" class="bar-dark">
+    <div class="buttons">
+      <button class="button button-icon icon ion-arrow-left-c" ui-sref="tab.chatlist">
+      </button>
+    </div>
+    <div class="h1 title" ng-bind="orgPersonName"></div>
+    <div class="buttons">
+      <button class="button button-icon icon ion-person"></button>
+    </div>
+  </ion-header-bar>
+
+  <ion-content class="padding">
+    <section class="chats">
+        <span ng-repeat="message in messages">
+          <span ng-show="!message.notification">
+            <p class="username" ng-show="!messageIsMine(message.from)">{{message.from}}</p>
+            <div ng-class='getBubbleClass(message.from,message.messageType)'>
+              <p ng-bind="message.message" ng-if="message.messageType==0"></p>
+              <img style="height: 100px;width: 80px;"
+                   ng-src="{{message.message}}" ng-show="message.messageType==1"
+                   ng-click="showBigImage(message.message)"/>
+              <a class="button  icon-left ion-radio-waves button-clear button-dark"
+                 ng-if="message.messageType==2" ng-click="voicePlay(message.fileName)">{{message.mediaDuration}}''</a>
+            </div>
+            <div class="clear"></div>
+          </span>
+          <span ng-show="message.notification">
+            <p class="notification" ng-bind="message.message"></p>
+          </span>
+        </span>
+    </section>
+  </ion-content>
+
+  <div id="imgBigDisplay" ng-show="bigImage" class="popover-backdrop"
+       style="position: fixed;top: 0;left: 0;z-index: 10; width: 100%;height: 100%;">
+    <img class="img-responsive"
+         style="position: absolute;top: 10%;left: 50%;z-index: 10;display: block;margin-top: 18px;
+         margin-left: -165px;height: 420px;width: 330px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);"
+         src="{{Url}}" ng-click="hideBigImage()"/>
+  </div>
+
+  <form name="sendMessageForm" novalidate>
+    <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach>
+      <div class="rj-footer-btn-wrap">
+        <button class="button button-icon icon ion-ios-mic-outline rj-footer-btn-left"
+                ng-click="showTextInput=!showTextInput">
+        </button>
+      </div>
+
+      <label class="item-input-wrapper">
+        <input id="msg-input" ng-model="data.message" ng-show="showTextInput" class="input-message" type="text"
+               placeholder="Message">
+
+        <button class="button button-full button-stable" ng-show="!showTextInput"
+                on-hold="voiceDown($event)" on-release="voiceUp()">按住 说话
+        </button>
+      </label>
+
+      <div class="footer-btn-wrap">
+        <button class="button button-icon icon ion-ios-paperplane footer-btn" type="submit"
+                ng-disabled="!data.message || data.message === ''" ng-click="sendMessage(data.message)">
+        </button>
+
+        <button class="button button-icon icon ion-plus-circled" type="submit"
+                ng-click="showActions($event)">
+          <!--<i class="icon ion-plus-circled"></i>-->
+        </button>
+      </div>
+    </ion-footer-bar>
+  </form>
+
+  <img src="imgs/voice2_150.png" ng-if="showVoicePopover" class="voiceCenter" />
+
+  <!--<script id="voice-popover.html" type="text/ng-template" >
+    <ion-popover-view style="height: 180px;">
+      <ion-content scroll="false" class="padding"  style="position: relative; opacity: 0; margin-bottom: 250px">
+        <div  align="center" >
+          <img src="imgs/voice2_150.png" />
+          <h3>please say...</h3>
+        </div>
+      </ion-content>
+    </ion-popover-view>
+  </script>-->
+
+  <script id="addFileAction-popover.html" type="text/ng-template">
+    <ion-popover-view style="height: 80px">
+      <ion-content scroll="false" class="padding" style="background: #fafafa">
+        <button class="button ion-images customIconSound" type="submit"
+                ng-click="sendImgs()">
+        </button>
+        <button class="button ion-camera customIconSound" type="submit"
+                ng-click="sendCameraImg()">
+        </button>
+        <button class="button ion-videocamera customIconSound" type="submit"
+                ng-click="sendVideocamera()">
+        </button>
+      </ion-content>
+    </ion-popover-view>
+  </script>
+
+</ion-view>

@@ -1,0 +1,43 @@
+<!--<ion-view view-title="Login" name="login-view">
+  <ion-content class="padding">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Username" ng-model="data.username">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="data.password">
+      </label>
+    </div>
+    <button class="button button-block button-calm" ng-click="login()">Login</button>
+  </ion-content>
+</ion-view>-->
+
+
+<ion-view view-title="Login" class="login-page">
+  <ion-content class="padding">
+    <div class="logo">
+      <h1>Welcome</h1>
+    </div>
+  </ion-content>
+
+  <div class="login-form">
+    <div class="list list-inset no-background">
+      <label class="item item-input no-background input-line">
+        <input class="input-text" type="text" placeholder="Username" ng-model="data.username">
+      </label>
+      <label class="item item-input no-background input-line">
+        <input class="input-text" type="password" placeholder="Password" ng-model="data.password">
+      </label>
+      <div class="card" ng-show="data.showInvalid">
+        <div class="item item-text-wrap" style="color: red">
+          the username or password invalid.
+        </div>
+      </div>
+      <button class="button button-calm button-block" ng-click="login()">
+        Sign In
+      </button>
+    </div>
+  </div>
+</ion-view>
+
+
